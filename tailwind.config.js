@@ -53,6 +53,7 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
+			
   		},
   		keyframes: {
   			'accordion-down': {
@@ -75,7 +76,12 @@ export default {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+
+		boxShadow: {
+			DEFAULT: "3px 3px 0px 0px #000",
+			active: "1px 1px 0px 0px #000"
+		},
   	}
   },
   plugins: [require("tailwindcss-animate")],
