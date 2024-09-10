@@ -1,6 +1,13 @@
 import clsx from "clsx";
 import { Button } from "../components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import PlayButton from "./PlayButton";
+import { ComboboxDemo } from "../components/ui/Combobox";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const skills = [
   "React",
@@ -14,30 +21,35 @@ const skills = [
 const sosmeds = ["instagram", "Tiktok", "github"];
 const experiences = [
   {
-    position: "Backend Developer",
-    company: "Tech Solutions Inc.",
-    duration: "Jan 2022 - Present",
+    position: "Lab Asisten",
+    company: "Universitas Gunadarma",
+    duration: "6 mos",
     responsibilities: [
-      "Developed and maintained RESTful APIs using Node.js and Express.",
-      "Integrated third-party services such as payment gateways.",
-      "Collaborated with front-end teams to ensure seamless integration.",
+      "Guided students in completing lab assignments related to computer programming and software development.",
+      "Maintained and troubleshooted lab computers, including software installations and updates.",
+      "Monitored lab sessions to ensure students followed lab safety protocols and proper usage of equipment.",
+      "Provided technical support during lab sessions, assisting students with coding errors and debugging.",
+      "Prepared lab materials and assisted in conducting practical exams for students.",
     ],
   },
+];
+const projects = [
   {
-    position: "Junior Developer",
-    company: "Innovative Apps",
-    duration: "Jun 2020 - Dec 2021",
+    position: "Project Developer",
+    company: "Personal Projects",
+    duration: "2023",
     responsibilities: [
-      "Assisted in the development of client-side and server-side logic.",
-      "Worked on improving database performance for queries.",
-      "Wrote unit and integration tests to ensure code quality.",
+      "Developed a food ordering application with real-time order tracking.",
+      "Built back-end services using Node.js and Express.js, with MongoDB as the database.",
+      "Implemented a user-friendly interface for both customers and restaurant managers.",
+      "Handled payment gateway integration and order management features.",
     ],
   },
 ];
 function Login() {
   return (
-    <div className="mt-10  dark:border-gray-600 mx-auto box-content h-auto w-96 p-10 border-2 ...">
-      <div className="neu inline-block p-2 border-r-card-foreground">
+    <div className=" dark:border-gray-600 mx-auto box-content h-auto w-xl p-10 border-2 ...">
+      <div className="neu inline-block p-2 border-r-card-foreground ">
         <Button
           onClick={() => {}}
           className={clsx([
@@ -50,31 +62,55 @@ function Login() {
           Profile
         </Button>
       </div>
-      <div className="flex mb-7 container justify-center items-center">
+      <PlayButton></PlayButton>
+
+      <div className=" flex gap-5 neu container  justify-center items-center p-5 rounded-xl">
         <img
-          src="https://th.bing.com/th?id=OIP.g5E6zK095Qp9AqePxruFgAHaFj&w=288&h=216&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.1&pid=3.1&rm=2"
-          className="w-52 h-52 rounded-full border-4 border-green-300"
+          src="tr.jpg"
+          className="rounded-full bg-blue-500 w-16 h-16 border-1 border-green-300"
         />
+        <div className="inline-block w-full m-2  text-2xl font-bold">
+          <h1>Reza~</h1>
+          <h1>Backend Developer</h1>
+          {/* <h1 className="text-xl font-sans text-blue-600">
+            im junior programmer using node js
+          </h1> */}
+        </div>
       </div>
-      <Tabs defaultValue="skill" className=" w-[400px] ">
-        <TabsList className="flex justify-center neu">
+
+      <div className=" mt-4 inline-block ">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className=" neu inline-block p-2 border-r-card-foreground m-2 "
+          >
+            <Button className="bg-[#8dd8dc]  hover:bg-green-400">
+              {skill}
+            </Button>
+          </div>
+        ))}
+      </div>
+      <ComboboxDemo></ComboboxDemo>
+      <Tabs defaultValue="skill" className=" w-[full] mt-10">
+        <TabsList className="flex justify-center neu bg-[#8da3dc]  hover:bg-yellow-400">
           <TabsTrigger value="skill">Skill</TabsTrigger>
           <TabsTrigger value="about">About</TabsTrigger>
           <TabsTrigger value="experience">Experience</TabsTrigger>
           <TabsTrigger value="project">Project</TabsTrigger>
+          <TabsTrigger value="actifity">Actifity</TabsTrigger>
         </TabsList>
-        <TabsContent value="skill" className="neu p-2">
-          <div className=" inline-block">
+        <TabsContent value="skill" className="neu p-2 ">
+          <div className=" inline-block ">
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="neu inline-block p-2 border-r-card-foreground m-2"
+                className=" neu inline-block p-2 border-r-card-foreground m-2 "
               >
                 <Button>{skill}</Button>
               </div>
             ))}
           </div>
-          <div className="flex gap-5 mt-10 m-2">
+          <div className="flex gap-5 mt-10 m-2 ">
             {sosmeds.map((sosmed, index) => (
               <div key={index} className=" flex border-r-card-foreground">
                 <Button
@@ -92,7 +128,7 @@ function Login() {
             ))}
           </div>
         </TabsContent>
-        <TabsContent value="about" className="neu p-2">
+        <TabsContent value="about" className="neu p-5">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae soluta
           commodi distinctio magni mollitia ad, suscipit velit maxime id
           eligendi! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -111,7 +147,7 @@ function Login() {
           adipisicing elit. Vitae soluta commodi distinctio magni mollitia ad,
           suscipit velit maxime id eligendi!
         </TabsContent>
-        <TabsContent value="experience" className="neu p-2">
+        <TabsContent value="experience" className="neu p-5">
           <div className="max-w-4xl mx-auto bg-white shadow-lg p-6 rounded-lg">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">
               Work Experience
@@ -138,14 +174,30 @@ function Login() {
             ))}
           </div>
         </TabsContent>
-        <TabsContent value="project" className="neu p-2">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae soluta
-          commodi distinctio magni mollitia ad, suscipit velit maxime id
-          eligendi! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Vitae soluta commodi distinctio magni mollitia ad, suscipit velit
-          maxime id eligendi! Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Vitae soluta commodi distinctio magni mollitia ad,
-          suscipit velit maxime id eligendi!
+        <TabsContent value="project" className="neu p-5">
+          <div className="max-w-4xl mx-auto bg-white shadow-lg p-6 rounded-lg">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Projects</h2>
+            {projects.map((job, index) => (
+              <div
+                key={index}
+                className="mb-6 p-4 border-l-4 border-blue-500 bg-gray-50 rounded-md shadow-md"
+              >
+                <h3 className="text-xl font-semibold text-gray-800">
+                  {job.position}
+                </h3>
+                <p className="text-gray-600 mb-2">
+                  {job.company} - {job.duration}
+                </p>
+                <ul className="list-disc list-inside">
+                  {job.responsibilities.map((task, idx) => (
+                    <li key={idx} className="text-gray-700">
+                      {task}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </TabsContent>
       </Tabs>
 
