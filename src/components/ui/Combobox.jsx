@@ -61,7 +61,7 @@ export function ComboboxDemo() {
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="neu w-[200px] p-0">
         <Command>
           <CommandInput placeholder="Search Post..." />
           <CommandList>
@@ -82,7 +82,9 @@ export function ComboboxDemo() {
                       value === framework.value ? "opacity-100" : "opacity-0"
                     )}
                   />
+                  <Button className="bg-[#f2f7fc]  hover:bg-green-400">
                   {framework.label}
+                  </Button>
                 </CommandItem>
               ))}
             </CommandGroup>
