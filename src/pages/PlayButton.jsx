@@ -54,7 +54,7 @@ const PlayButton = () => {
       </button>
 
       {/* Audio Element */}
-      <audio ref={audioRef} src="心海 - Eve MV.mp3" />
+      <audio ref={audioRef} src="Kobo_Kanaeru_Opening_BGM_1_hour_[_YouConvert.net_].mp3" />
     </div>
   );
 };

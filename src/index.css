@@ -67,7 +67,7 @@
 @layer utilities{
 
   .neu{
-    @apply mb-[3px] mr-[3px] border-2 border-foreground shadow;
+    @apply mb-[3px] mr-[3px] border-2 border-cyan-200 shadow;
   }
 
   .neu-pressed{
@@ -77,4 +77,6 @@
   .neu-active:active{
     @apply active:neu-pressed;
   }
+
+  
 }
