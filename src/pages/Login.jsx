@@ -5,6 +5,7 @@ import PlayButton from "./PlayButton";
 import { ComboboxDemo } from "../components/ui/Combobox";
 import { Progress } from "@/components/ui/progress";
 import SosmedButtons from "./SosmedButtons";
+import Blogs from "./Blogs";
 import {
   Popover,
   PopoverContent,
@@ -179,6 +180,9 @@ function Login() {
                 ))}
               </div>
             </TabsContent>
+            <TabsContent value="actifity" className="neu p-5">
+              <Blogs/>
+            </TabsContent>
 
             <TabsContent value="project" className="neu p-5">
               <div className="max-w-4xl mx-auto bg-white shadow-lg p-6 rounded-lg">
@@ -227,7 +231,7 @@ function Login() {
         </main>
  
       </div>
-     
+                
     </div>
   );
 }
