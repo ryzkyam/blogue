@@ -5,8 +5,50 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <style>
+      .bg-white {
+        background-color: white;
+        color: black;
+      }
+      .bg-dark {
+        background-color: rgb(6, 64, 85);
+        color: rgb(0, 0, 0);
+      }
+
+      .marginLogo{
+        margin-left: 150px;
+      }
+    </style>
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', function() {
+        const buttontrigger = document.getElementById('buttontrigger');
+        const body = document.body;
+
+        buttontrigger.addEventListener('click', function() {
+          if (body.classList.contains('bg-white')) {
+            body.classList.remove('bg-white');
+            body.classList.add('bg-dark');
+            buttontrigger.style.color = 'white';
+          } else {
+            body.classList.remove('bg-dark');
+            body.classList.add('bg-white');
+            buttontrigger.style.color = 'black';
+          }
+        });
+      });
+    </script>
   </head>
-  <body class="bg-white ">
+  <body class="background bg-white">
+        <div class="flex justify-center items-center ">
+          <button id="buttontrigger">
+            <img
+            src="light-mobile-ui-basic-lamp-dark-mode-svgrepo-com.svg"
+            width="20px"
+            class="marginLogo"
+            alt="minions"
+          />
+          </button>
+        </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
