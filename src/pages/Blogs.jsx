@@ -1,6 +1,6 @@
 // src/components/BlogPage.js
 import React from 'react';
-
+import { Button } from "../components/ui/button";
 // Sample blog posts data
 const posts = [
   {
@@ -15,6 +15,7 @@ const posts = [
     date: "September 12, 2024",
     excerpt: "This is a short summary of the second blog post."
   },
+  
   // Add more posts as needed
 ];
 
@@ -30,7 +31,9 @@ const Blogs = () => {
             <h2 className="text-2xl font-semibold text-gray-800">{post.title}</h2>
             <p className="text-sm text-gray-600">{post.date}</p>
             <p className="mt-2 text-gray-700">{post.excerpt}</p>
-            <a href={`/posts/${post.id}`} className="inline-block mt-4 text-blue-500 hover:underline">Read more</a>
+            <Button className="bg-[#8dd8dc] hover:bg-purple-400 text-lg">
+            <a href={`/posts/${post.id}`} className="inline-block  text-blue-500 hover:underline">Read more</a>
+            </Button>
           </article>
         ))}
       </main>

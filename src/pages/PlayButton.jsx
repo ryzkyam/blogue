@@ -18,7 +18,7 @@ const PlayButton = () => {
       {/* Button for play and pause */}
       <button
         onClick={togglePlayPause}
-        className=" mb-4 w-16 h-16 bg-blue-500 rounded-full text-white flex items-center justify-center focus:outline-none"
+        className=" mb-4 w-16 h-16 bg-black rounded-full text-white flex items-center justify-center focus:outline-none"
       >
         {isPlaying ? (
           <svg
