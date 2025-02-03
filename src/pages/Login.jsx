@@ -6,6 +6,7 @@ import { ComboboxDemo } from "../components/ui/Combobox";
 import { Progress } from "@/components/ui/progress";
 import SosmedButtons from "./SosmedButtons";
 import Blogs from "./Blogs";
+import Actifity from "./Actifity";
 import {
   Popover,
   PopoverContent,

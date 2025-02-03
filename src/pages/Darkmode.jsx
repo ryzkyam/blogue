@@ -1,9 +1,21 @@
+import React, { useState } from 'react'; // Assuming you have a CSS file for styles
 
+const Darkmode = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-function Darkmode() {
+  const toggleTheme = () => {
+    setIsDarkMode(prevMode => !prevMode);
+  };
+
   return (
-    <h1>Programing</h1>
-  )
-}
+    <div className={isDarkMode ? 'bg-dark' : 'bg-white'}>
+      <div className="flex justify-start items-start">
+        <button onClick={toggleTheme} style={{ color: isDarkMode ? 'white' : 'black' }}>
+          {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+      </div>
+    </div>
+  );
+};
 
-export default Darkmode
+export default Darkmode;
