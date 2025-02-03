@@ -21,7 +21,24 @@ const skills = [
   "Postgress",
   "laravel",
 ];
-const sosmeds = [" 🤳Instagram", " 📔 Tiktok", " 🤖 Github", " 📚Email", " 🧑‍💻 Linkind"];
+
+const techStackLogo = [
+
+ "Draw.io",
+  "Visio",
+  "tableu",
+  "UIpath",
+  "vscode",
+];
+
+const sosmeds = [
+  " 🤳Instagram",
+  " 📔 Tiktok",
+  " 🤖 Github",
+  " 📚Email",
+  " 🧑‍💻 Linkind",
+  " 🤖 Discord"
+];
 const experiences = [
   {
     position: "Lab Asisten",
@@ -51,9 +68,9 @@ const projects = [
 ];
 function Login() {
   return (
-    <div className="container  sm:mt-20 mx-auto px-4 md:px-8 lg:px-16">
+    <div className="container  sm:mt-5 mx-auto px-8 md:px-8 lg:px-16">
       <div className=" flex flex-col md:flex-row">
-        <aside className="rounded-xl md:w-1/4 p-4 bg-gray-100">
+        <aside className="rounded-xl md:w-1/4 p-4 bg-white">
           <PlayButton></PlayButton>
           <div className="neu flex gap-5 neu container  justify-center items-center p-5 rounded-xl">
                    {" "}
@@ -73,27 +90,58 @@ function Login() {
             {/* Konten utama */}
             <div className="hidden md:block w-full m-2 text-2xl font-bold">
               <div className="neu w-52 h-96 p-5 m-2 rounded  text-2xl font-bold">
-              <div className="inline-block gap-5 mt-0 m-2">
-               <SosmedButtons></SosmedButtons>
-                <img src="gru-minionsgru-minions.svg" width={100} className="ml-52" alt="minions" />
-                <img src="minion-with-megaphone.svg" width={70} className="ml-32 -mt-10" alt="minions" />
-              </div>
+                <div className="inline-block gap-5 mt-0 m-2">
+                  <SosmedButtons></SosmedButtons>
+                  <img
+                    src="gru-minionsgru-minions.svg"
+                    width={100}
+                    className="ml-52"
+                    alt="minions"
+                  />
+                  <img
+                    src="minion-with-megaphone.svg"
+                    width={70}
+                    className="ml-32 -mt-2"
+                    alt="minions"
+                  />
+                </div>
               </div>
             </div>
           </main>
         </aside>
         <main className="md:w-3/4 p-4">
           <div className="mt-4 flex flex-wrap md:flex-row">
-            {skills.map((skill, index) => (
-              <div 
-                key={index}
-                className="neu inline-block p-2 sm:p-3 md:p-4 border-r-card-foreground m-2"
-              >
-                <Button className="bg-[#8dd8dc] hover:bg-purple-400 text-lg">
-                  {skill}
-                </Button>
+            <div className="bg-[#f0eddd] text-lg">
+              <div className="neu inline-block p-2 sm:p-3 md:p-4 border-r-card-foreground m-2">
+                <p className="text-1xl font-bold mb-6 text-gray-900">
+                  well hello people pleasure let me introduce myself🌤️⛅⬇️ <br />
+                  so yaa my name Reza and i am undergraduate in Gunadarma
+                  univesity bachelor degrees of system information focusly on
+                  sistem analyst and backend developer keep learn something new
+                  and tech entusiast
+                  <br />
+                  what tech for my daily Use??
+                </p>
+
+                <div className="inline-block">
+                  {techStackLogo.map((techStackLogo, index) => (
+                    <div
+                      key={index}
+                      className="neu inline-block p-2 sm:p-3 md:p-4 border-r-card-foreground m-2"
+                    >
+                      <Button className="bg-[#de9cf4] hover:bg-green-400 text-lg">
+                        <Popover>
+                          <PopoverTrigger>{techStackLogo}</PopoverTrigger>
+                          <PopoverContent className="w-80">
+                            <Progress value={70} />
+                          </PopoverContent>
+                        </Popover>
+                      </Button>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
+            </div>
           </div>
           <ComboboxDemo /> {/* Assuming you have a ComboboxDemo component */}
           <Tabs defaultValue="skill" className="w-full h-auto mt-10">
@@ -123,7 +171,6 @@ function Login() {
                 ))}
               </div>
             </TabsContent>
-           
 
             <TabsContent value="about" className="neu p-5">
               <div className="max-w-4xl mx-auto bg-white shadow-lg p-6 rounded-lg">
@@ -181,7 +228,7 @@ function Login() {
               </div>
             </TabsContent>
             <TabsContent value="actifity" className="neu p-5">
-              <Blogs/>
+              <Blogs />
             </TabsContent>
 
             <TabsContent value="project" className="neu p-5">
@@ -213,25 +260,22 @@ function Login() {
             </TabsContent>
           </Tabs>
           <div className="inline-block font-bold mt-5 p-2 text-xl">
-                <h1>Contact</h1>
+            <h1>Contact</h1>
+          </div>
+          <div className="mt-2 flex flex-wrap md:flex-row ">
+            {sosmeds.map((sosmed, index) => (
+              <div key={index} className=" border-r-card-foreground p-2">
+                <Button className="bg-[#8dd8dc] hover:bg-purple-400 text-lg">
+                  {sosmed}
+                </Button>
               </div>
-
-              <div className="mt-2 flex flex-wrap md:flex-row ">
-                {sosmeds.map((sosmed, index) => (
-                  <div key={index} className=" border-r-card-foreground p-2">
-                    <Button className="bg-[#8dd8dc] hover:bg-purple-400 text-lg" >
-                      {sosmed}
-                    </Button>
-                  </div>
-                ))}
-              </div>
+            ))}
+          </div>
           <Button className="rounded mt-2 p-1 text-lg transition-colors md:black border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 bg-[#f2f7fc] hover:bg-green-400 dark:bg-[#22272e] dark:hover:bg-gray-700">
             Connect!
           </Button>
         </main>
- 
       </div>
-                
     </div>
   );
 }
